@@ -1,0 +1,197 @@
+/* Invoice Management App Styles */
+
+/* Animation utilities */
+.animate-in {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  animation-name: fadeIn;
+}
+
+.slide-in-from-left {
+  animation-name: slideInFromLeft;
+}
+
+.slide-in-from-bottom-2 {
+  animation-name: slideInFromBottom;
+}
+
+.zoom-in-95 {
+  animation-name: zoomIn95;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn95 {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Duration utilities */
+.duration-500 {
+  animation-duration: 0.5s;
+}
+
+/* Smooth transitions for dark mode */
+.transition-colors {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Custom scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #141625;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #252945;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #373b53;
+}
+
+/* Custom scrollbar for light mode */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f8fb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dfe3fa;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7e88c3;
+}
+
+/* Focus styles */
+input:focus,
+select:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: #6366f1;
+}
+
+/* Checkbox styles */
+input[type="checkbox"] {
+  accent-color: #6366f1;
+}
+
+/* Button hover transitions */
+button {
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Selection color */
+::selection {
+  background-color: #6366f1;
+  color: white;
+}
+
+.dark ::selection {
+  background-color: #6366f1;
+  color: white;
+}
+
+/* Invoice card hover effect */
+.invoice-card {
+  transition: all 0.3s ease;
+}
+
+.invoice-card:hover {
+  transform: translateX(4px);
+}
+
+/* Status badge animation */
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.status-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Modal backdrop blur */
+.modal-backdrop {
+  backdrop-filter: blur(4px);
+}
+
+/* Smooth page transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
