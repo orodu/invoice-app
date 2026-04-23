@@ -5,7 +5,7 @@ A fully functional, responsive invoice management system built as part of the Fr
 🛠 Setup Instructions<br>
 To run this project locally, follow these steps:
 1.	Clone the repository:
-2.	git clone [https://github.com/yourusername/invoice-app.git](https://github.com/yourusername/invoice-app.git)
+2.	git clone [https://github.com/orodu/invoice-app]
 3.	Navigate to the project directory:
 4.	cd invoice-app
 5.	Install dependencies:
