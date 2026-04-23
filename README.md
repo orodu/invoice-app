@@ -1,73 +1,40 @@
-# React + TypeScript + Vite
+<b>Invoice Management Application</b>
+A fully functional, responsive invoice management system built as part of the Frontend Wizards Stage 2 Task. This application allows users to manage their billing workflow with ease, featuring a professional UI based on the provided Figma design.
+🚀 Live Demo
+[Insert Your Live URL Here (e.g., Vercel or Netlify link)]
+🛠 Setup Instructions
+To run this project locally, follow these steps:
+1.	Clone the repository:
+2.	git clone [https://github.com/yourusername/invoice-app.git](https://github.com/yourusername/invoice-app.git)
+3.	Navigate to the project directory:
+4.	cd invoice-app
+5.	Install dependencies:
+6.	npm install
+7.	Start the development server:
+8.	npm start
+9.	Open the app: Navigate to http://localhost:3000 in your browser.
+🏗 Architecture Explanation
+This application is built using React and following a modular component-based architecture:
+•	State Management: Utilizes React's useState and useEffect for local state handling. LocalStorage is integrated to ensure that invoice data and theme preferences (Light/Dark mode) persist across browser reloads.
+•	Routing & Views: A conditional rendering logic manages the transition between the Invoice List Page, Invoice Detail Page, and the Invoice Form Component.
+•	Styling: Built with Tailwind CSS to achieve a highly responsive design that adheres to the 320px (Mobile), 768px (Tablet), and 1024px (Desktop) breakpoints specified in the requirements.
+•	Data Flow: A centralized data array handles CRUD operations, ensuring that updates to an invoice status (e.g., marking as Paid) reflect immediately across all views.
+⚖️ Trade-offs
+During development, the following technical trade-offs were made:
+•	LocalStorage vs. Backend: For this stage, LocalStorage was chosen over a full-stack Node/Express backend. Trade-off: This provides instant performance and simplified deployment but limits data sharing across different devices/browsers.
+•	Single-File Component Structure (Contextual): For the purpose of this specific delivery environment, logic was consolidated into a main App structure. Trade-off: While easier to review in one go, a production-scale app would typically split these into separate files for better maintainability.
+•	Native Date Inputs: Used native HTML5 date pickers for the "Invoice Date" field. Trade-off: While consistent with browser defaults and highly accessible, it offers less visual customization compared to a third-party library like react-datepicker.
+♿ Accessibility Notes
+This app was built with WCAG AA standards in mind:
+•	Semantic HTML: Used <main>, <section>, <header>, and <aside> to provide a clear document outline for screen readers.
+•	Forms: Every input field is explicitly associated with a <label> element.
+•	Interactivity: All buttons are built using the <button> tag to ensure they are keyboard-navigable and focusable.
+•	Modals: The delete confirmation modal is designed to trap focus and can be dismissed using the ESC key.
+•	Color Contrast: The color palette for both light and dark modes was verified to ensure text remains legible against all backgrounds.
+🌟 Improvements Beyond Requirements
+To enhance the user experience further, I added the following:
+1.	Animated Transitions: Integrated CSS keyframe animations for side-panel form entries and view transitions to give the app a "premium" feel.
+2.	Advanced ID Generation: Implemented a unique ID generator that follows the "Two letters + Four numbers" format (e.g., RT2034) commonly seen in professional invoicing software.
+3.	Skeleton Loading/Empty States: Added a custom SVG-illustrated empty state to guide users when no invoices match the current filter.
+4.	Input Masking: Basic formatting for currency and date strings to ensure consistent data presentation regardless of input method.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
