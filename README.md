@@ -1,7 +1,7 @@
 <b>Invoice Management Application</b> <br>
 A fully functional, responsive invoice management system built as part of the Frontend Wizards Stage 2 Task. This application allows users to manage their billing workflow with ease, featuring a professional UI based on the provided Figma design.<br>
 🚀 Live Demo<br>
-[Insert Your Live URL Here (e.g., Vercel or Netlify link)]<br>
+(https://invoice-app-jade-gamma.vercel.app/)<br>
 🛠 Setup Instructions<br>
 To run this project locally, follow these steps:
 1.	Clone the repository:
